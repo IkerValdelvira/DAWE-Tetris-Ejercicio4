@@ -358,10 +358,18 @@ Tetris.prototype.key_pressed = function(e) {
 	else if(key == 39) console.log("Se ha pulsado 'Derecha'");
 	else if(key == 40) console.log("Se ha pulsado 'Abajo'");
 	*/
-	if(key == 37) this.do_move("Left");
-	else if(key == 39) this.do_move("Right");
-	else if(key == 40) this.do_move("Down");
-
+	if(key == 37){
+		e.preventDefault();
+		this.do_move("Left");
+	}
+	else if(key == 39){
+		e.preventDefault();
+		this.do_move("Right");
+	}
+	else if(key == 40){
+		e.preventDefault();
+		this.do_move("Down");
+	}
 }
 
 Tetris.prototype.do_move = function(direction) {
